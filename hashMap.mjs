@@ -14,10 +14,27 @@ class HashMap{
      
         return hashCode;
     }
-    
+    set(key,value){
+       
+        if(this.length==0){
+            this.bucketArr=[[key,value]];
+            
+        }
+        else{
+            this.bucketArr.push([key,value]);
+            this.length++;
+        }
+        this.length++;
+        
+        return this.bucketArr;
+    }
 }
 
 let hashMap=new HashMap();
+
 console.log(hashMap.hash('banana'));
+
+console.log(hashMap.set('banana','yellow'));
+console.log(hashMap.set('apple','red'));
 
 
